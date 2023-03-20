@@ -31,7 +31,12 @@ header{
 
 
 }
-
+ .bmenu{
+  width: 35px;
+  height: 5px;
+  background-color: orange;
+  margin: 6px 0;
+ }
 .logo img{
   max-width: 100%;
   width: 70px;
@@ -69,9 +74,10 @@ header{
   width: 100%;
 }
 
-#menu-icon{
+#menu-icon1{
   font-size: 35px;
-  color: #000;
+  color: #fbf6f6;
+  border-color: white;
   z-index: 10001;
   cursor: pointer;
   display: none;
@@ -761,9 +767,9 @@ p{
 
 }
 
-
+/*
 @media (max-width: 970px){
-#menu-icon{
+#menu-icon1{
   display : block;
 }
 .home{
@@ -772,7 +778,7 @@ p{
 
 .navlist{
   position: absolute;
-  top: 100%;
+  top: -600px;
   left: 0;
   right: 0;
   flex-direction: column;
@@ -784,20 +790,175 @@ p{
   display: block;
   padding: 1.2rem;
   margin: 1.5rem;
-  border-right: 2px solid black;
+  border-right: 2px solid white;
+  color: whitesmoke;
+
+}
+
+.navlist a:hover{
+  background: white;
+  color: orangered;
+
+}
+
+.navlist a::after{
+  display: none;
+}
+.navlist.active{
+  top: 100%;
+}
+
+}*/
+
+@media (max-width: 935px){
+  header {
+    padding: 0 2rem;
+  }
+
+  header .navlist .navitem{
+    padding: 0 20px;
+  }
+
+}
+
+@media (max-width: 675px){
+  header .navlist{
+    display: grid;
+    position: absolute;
+    background: #0c0c0c;
+    width: 100%;
+    top: 60px;
+    left: 0;
+   transform: translateY(-10%);
+    z-index: -1;
+    transition: .6s;
+
+  }
+
+  header .navlist .navitem {
+    padding-left: 118px;
+  }
+
+
+  header .navbar-toggler {
+    display: grid;
+  }
+
+
+
+
 
 
 
 
 }
 
+header .navbar-toggler{
+  display: none;
+  height: min-content;
+  margin: 18px -10px 0 0;
+  cursor: pointer;
 
+}
+
+header .navbar-toggler .bar{
+  width: 40px;
+  height: 5px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 10%;
+  transition: .4s;
 
 
 }
 
+.check{
+  display: none;
+}
+
+input:checked ~ header .navlist {
+  transform: translateY(0);
+}
+
+input:checked ~ header .navbar-toggler{
+  margin-top: 35px;
+}
+
+input:checked ~ header .navbar-toggler .bar:nth-child(1){
+  position: absolute;
+  transform: rotate(45deg);
+}
+input:checked ~ header .navbar-toggler .bar:nth-child(2){
+ display: none;
+}
+input:checked ~ header .navbar-toggler .bar:nth-child(3){
+ 
+  transform: rotate(-45deg);
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px){
+  .home{
+    grid-template-columns: 1fr;
+    min-height: 130vh;
+    grid-gap: 1rem;
+  }
+
+  .home-text{
+    padding-top: 55px;
+
+  }
+  .home-img {
+    text-align: center;
+  }
+  .home-img img{
+    width: 440px;
+    height: auto;
+  }
+
+  .about{
+    grid-template-columns: 1fr;
+  }
+  .about-img{
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+
+ h2{
+  font-size: 2rem;
+ }
+ section{
+  padding: 65px 3%;
+  transition: .3s;
+ }
+}
+
+
+@media (max-width: 540px){
+
+  .contact .action form input[type="email"]{
+    width: 380px;
+  }
+
+
+
+
+}
 
 
 
