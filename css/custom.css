@@ -13,6 +13,7 @@
 
 body{
 background: #ffffff;
+
 }
 
 header{
@@ -73,6 +74,12 @@ header{
 .navlist a:hover::after{
   width: 100%;
 }
+
+.active{
+ background: rgb(208, 60, 6);
+}
+
+
 
 #menu-icon1{
   font-size: 35px;
@@ -361,29 +368,8 @@ margin-bottom: 20px;
   
 }
 
-.outer{
-  height: 160px;
-  height: 160px;
-  border-radius: 50%;
-  padding: 20px;
-  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-              -6px -6px 10px -1px rgba(255,255,255,0.7);
-}
 
-.inner{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-              inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-               -0.5px -0.5px 0px rgba(255,255,255,1),
-               0.5px 0.5px 0px rgba(0,0,0,.15),
-               0px 12px 10px -10px rgba(0,0,0,.05);
 
-}
 
 #number{
   font-weight: 600;
@@ -391,24 +377,9 @@ margin-bottom: 20px;
 
 }
 
-circle{
-  fill: none;
-  stroke: url(#GradientColor);
-  stroke-width: 20px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-  animation: anime 2s linear forwards;
-
-}
-
-svg{
-  position: absolute;
-  top: 0;
-  left: 0;
 
 
 
-}
 
 @keyframes anime {
   100%{
@@ -664,7 +635,7 @@ svg{
 
 
 .contact{
-  background: rgb(196, 128, 163);
+  background: rgb(238, 163, 120);
   width: 64%;
   margin: 100px auto;
   padding: 70px 150px;
@@ -673,8 +644,9 @@ svg{
   justify-content: center;
   text-align: center;
   border-radius: 12px;
-  background-image: url(../img/email.png);
+  
   background-size: cover;
+  
 }
 
 .center h3{
@@ -733,6 +705,97 @@ svg{
   border-radius: 30px;
   cursor: pointer;
 }
+
+/* Contact info CSS*/
+
+.heroo{
+
+  width: 100%;
+  height: auto;
+  background-image: linear-gradient(rgba(0,0,0,0.7), #f87b62), url(../img/color.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  width: 80%;
+  max-width: 500px;
+  margin-top: 130px;
+  margin-bottom: 120px;
+
+}
+
+.input-group{
+  margin-bottom: 25px;
+  position: relative;
+}
+.igroup{
+  margin-bottom: 0px;
+  margin-top: 5px;
+  position: relative;
+  text-align: center;
+}
+input, textarea{
+  width: 100%;
+  padding: 8px;
+  outline: 0;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 15px;
+}
+
+label{
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: #fff;
+  cursor: text;
+  transition: 0.2s;
+}
+
+button{
+  padding: 10px 0;
+  color: #fff;
+  outline: none;
+  background: transparent;
+  border: 1px solid #fff;
+  width: 100%;
+  cursor: pointer;
+  
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label{
+  top: -35px;
+  font-size: 14px;
+}
+
+.row1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row1 .input-group{
+  flex-basis: 48%;
+}
+
+button:hover{
+  background: white;
+  color: #0c0c0c;
+  font-weight: 600;
+}
+
+
+
 
 
 @media (max-width: 1425px){
@@ -843,12 +906,6 @@ p{
   header .navbar-toggler {
     display: grid;
   }
-
-
-
-
-
-
 
 
 }
